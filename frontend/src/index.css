@@ -4,12 +4,12 @@
 
 @font-face {
   font-family: "Inter";
-  src: local("Inter") url("/fonts/inter/Inter-Regular.woff2") format("woff2");
+  src: local("Inter"), url("/fonts/inter/Inter-Regular.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "Inter Bold";
-  src: local("Inter Bold") url("/fonts/inter/Inter-Bold.woff2") format("woff2");
+  src: local("Inter Bold"), url("/fonts/inter/Inter-Bold.woff2") format("woff2");
 }
 
 :root {
