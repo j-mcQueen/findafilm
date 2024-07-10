@@ -10,12 +10,13 @@ export default {
       colors: {
         bg: "#00092A",
         bgL: "#485996",
+        bgXL: "#7C99FF",
         red: "#D83737",
         tred: "rgba(216, 55, 55, 0.25)",
         gray: "#BFBFBF",
       },
-      dropShadow: {
-        coral: "2px 2px 4px 0 rgba(255, 151, 151, 0.5)",
+      boxShadow: {
+        coral: "4px 4px 6px 0 rgba(255, 151, 151, 0.5)",
       },
     },
   },
