@@ -1,5 +1,4 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import "./App.css";
 import Generator from "./components/landing/Generator";
 import Results from "./components/suggestions/Results";
 
