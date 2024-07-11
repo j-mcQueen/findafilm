@@ -1,8 +1,24 @@
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Loading from "../../assets/icons/Loading";
 
-export default function Form() {
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+export default function Form({ ...props }) {
+  const { setResults } = props;
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setLoading(true);
+
+    const response = await fetch("/results");
+    const data = await response.json();
+
+    if (data) {
+      setResults(data);
+      setLoading(false);
+      return navigate("/results");
+    }
   };
 
   return (
@@ -24,7 +40,7 @@ export default function Form() {
         type="submit"
         className="border border-solid border-red font-interB py-3 px-4 mt-10 focus:outline-none focus:bg-tred focus:shadow-coral xl:hover:bg-tred xl:hover:shadow-coral transition-all"
       >
-        GENERATE!
+        {loading ? <Loading /> : "GENERATE!"}
       </button>
     </form>
   );

@@ -1,0 +1,6 @@
+# backend dependencies
+
+flask
+python-dotenv
+# openai
+# tavily-python
