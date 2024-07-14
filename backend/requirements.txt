@@ -1,6 +1,10 @@
 # backend dependencies
 
 flask
+flask-cors
+langchain
+langchain_openai
+langgraph
 python-dotenv
 # openai
-# tavily-python
+tavily-python
