@@ -8,12 +8,19 @@ class SearchAgent:
     pass
 
   def search(self, input: str):
-    results = tavily.search(query=f"Find me 10 movies that are similar in premise, genre, and IMDb rating to {input}", max_results=10, include_images=True)
+    # find sites that have lists of films similar to the input
+    results = tavily.search(query=f"Movies similar to {input}", max_results=10)
     candidates = results["results"]
 
-    return candidates
+    # extract urls from the result to be processed by the filter agent
+    links = list(map(lambda link: link["url"], candidates))
+    return input, links
   
   def run(self, input: str):
     response = self.search(input)
 
-    return response
+    # create a dictionary to be appended to after each agent invocation
+    output = {}
+    output["input"] = response[0]
+    output["sources"] = response[1]
+    return output

@@ -1,40 +1,35 @@
-from langchain.adapters.openai import convert_openai_messages
-from langchain_openai import ChatOpenAI
+from utils import process
 
-example_output = """
-["movie title 1", "movie title 2", "movie title 3", "movie title 4", "movie title 5"]
-"""
+example_output = """[
+  {"title": movie title 1, "url": url to movie 1 IMDb page, "rating": IMDb rating, "genre": ["genre 1", "genre 2"] },
+  {"title": movie title 2, "url": url to movie 2 IMDb page, "rating": IMDb rating, "genre": ["genre 1", "genre 2"] },
+  {"title": movie title 3, "url": url to movie 3 IMDb page, "rating": IMDb rating, "genre": ["genre 1", "genre 2"] },
+  {"title": movie title 4, "url": url to movie 4 IMDb page, "rating": IMDb rating, "genre": ["genre 1", "genre 2"] },
+  {"title": movie title 5, "url": url to movie 5 IMDb page, "rating": IMDb rating, "genre": ["genre 1", "genre 2"] },
+]"""
 
 class FilterAgent:
   def __init__(self):
     pass
 
-  def filter(self, input: str, candidates: list):
+  def filter(self, input: dict):
     # create a prompt that describes the agent's functional responsibility, and what the expected output is
     prompt = [{
       "role": "system",
-      "content": "You are responsible for reviewing a list of 10 movies. Choose 5 movies from this list that are most similar \n"
-                 "in premise, genre, and IMDb rating to that of the provided movie."
+      "content": "You are responsible for looking through a set of provided sources and identifying movies which are most \n" 
+                 "similar in premise, genre, and IMDb rating to that of a provided movie. Your output should contain 10 movie options.\n"
     }, {
       "role": "user",
-      "content": f"Provided movie: {input} \n"
-                 f"Return 5 movies that are most similar in premise, genre and IMDb rating to that of the provided movie. \n "
-                 f"You can choose movies from this list: {candidates} \n"
-                 f"Your output should be a list containing each movie that you have chosen. An example of the desired \n"
-                 f"output format is: {example_output}\n"
+      "content": f"Provided movie: {input['input']} \n"
+                 f"Provided sources: {input['sources']} \n" 
+                 f"Return 10 movies that are most similar in premise, genre and IMDb rating to that of the provided movie. \n"
+                 f"You can choose movies provided in lists from these sources: {input['sources']} \n"
+                 f"Please return nothing but a list of dictionaries in the following format: {example_output}\n"
     }]
     
-    # send the prompt to the LLM for processing
-    messages = convert_openai_messages(prompt)
-    result = ChatOpenAI(model="gpt-4o", max_retries=1).invoke(messages).content
-
-    # filter out any movie candidate which the LLM has not chosen
-    for movie in candidates:
-      if movie["title"] not in result:
-        candidates.remove(movie)
-
-    return candidates
+    return process.process_prompt(prompt)
   
   def run(self, input):
     chosen_movies = self.filter(input)
-    return chosen_movies
+    input["chosen"] = chosen_movies
+    return input
