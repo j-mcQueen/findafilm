@@ -61,7 +61,7 @@ http://localhost:5173/
 
 Setup notes:
 
-- These instructions assume the version of Python installed on your computer is > 3
+- These instructions assume the version of Python installed on your computer is >= 3
 - After you have set up your virtual environment, ensure your IDE's Python interpreter is pointing to the correct environment. Here are some helpful links if you have issues: [VSCode docs](https://code.visualstudio.com/docs/python/environments), [Visual Studio Code does not detect Virtual Environments](https://stackoverflow.com/questions/66869413/visual-studio-code-does-not-detect-virtual-environments)
 
 ## Contribution
