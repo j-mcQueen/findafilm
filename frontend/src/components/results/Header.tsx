@@ -27,7 +27,8 @@ export default function Header({ ...props }) {
       </div>
 
       <p className="text-gray pt-5 xl:pt-0">
-        Showing 10 films similar to: {input}
+        Showing 10 films similar to:&nbsp;
+        <span className="text-bgXL">{input.toUpperCase()}</span>
       </p>
     </header>
   );
