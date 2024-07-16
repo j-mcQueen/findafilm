@@ -13,14 +13,13 @@ class SearchAgent:
     candidates = results["results"]
 
     # extract urls from the result to be processed by the filter agent
-    links = list(map(lambda link: link["url"], candidates))
-    return input, links
+    return list(map(lambda link: link["url"], candidates))
   
   def run(self, input: str):
     response = self.search(input)
 
     # create a dictionary to be appended to after each agent invocation
     output = {}
-    output["input"] = response[0]
-    output["sources"] = response[1]
+    output["input"] = input
+    output["sources"] = response
     return output

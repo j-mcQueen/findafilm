@@ -24,10 +24,6 @@ class Controller:
     workflow.set_finish_point("write")
 
     chain = workflow.compile()
+    result = chain.invoke(input)
 
-    # speed up results generation
-    search_result = chain.invoke(input)
-    filter_result = chain.invoke(search_result)
-    write_result = chain.invoke(filter_result)
-
-    return write_result
+    return result

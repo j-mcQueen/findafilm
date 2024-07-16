@@ -2,10 +2,6 @@ from utils import process
 
 example_output = """[
   {"title": movie title 1, "url": url to movie 1 IMDb page, "rating": IMDb rating, "genre": ["genre 1", "genre 2"] },
-  {"title": movie title 2, "url": url to movie 2 IMDb page, "rating": IMDb rating, "genre": ["genre 1", "genre 2"] },
-  {"title": movie title 3, "url": url to movie 3 IMDb page, "rating": IMDb rating, "genre": ["genre 1", "genre 2"] },
-  {"title": movie title 4, "url": url to movie 4 IMDb page, "rating": IMDb rating, "genre": ["genre 1", "genre 2"] },
-  {"title": movie title 5, "url": url to movie 5 IMDb page, "rating": IMDb rating, "genre": ["genre 1", "genre 2"] },
 ]"""
 
 class FilterAgent:

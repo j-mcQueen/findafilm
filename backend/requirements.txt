@@ -4,7 +4,8 @@ flask
 flask-cors
 langchain
 langchain_openai
+langchain_community
 langgraph
 python-dotenv
-# openai
+openai
 tavily-python
