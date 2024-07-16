@@ -15,7 +15,7 @@ export default function Header({ ...props }) {
       <div className="flex items-center gap-5">
         <button
           type="button"
-          className="bg-tred border border-solid border-red p-1 xl:p-2"
+          className="border border-solid border-red p-1 xl:p-2 xl:hover:bg-tred xl:focus:bg-tred xl:transition-colors"
           onClick={() => handleReturn()}
         >
           <Return className="w-5 h-5" />
