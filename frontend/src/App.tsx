@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Generator from "./components/landing/Generator";
-import Results from "./components/suggestions/Results";
+import Results from "./components/results/Results";
 
 export default function App() {
   const [results, setResults] = useState({});
