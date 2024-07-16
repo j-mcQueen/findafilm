@@ -69,9 +69,9 @@ Setup notes:
 If you're interested in contributing to this project, then I'm absolutely thrilled! To collaborate, you can follow these steps:
 
 1. Fork the repository and create a branch off `main`.
-2. Check in to your branch, and make your changes. Before you get started, please take a moment to have a look through the codebase and see the style by which things have been built. It would be preferred if you keep your changes in this style as best as you can
+2. Check in to your branch, and make your changes. Before you get started, please take a moment to have a look through the codebase and see the style by which things have been built. It would be preferred if you keep your changes in this style as best as you can.
 3. Commit your changes, and write concise and meaningful messages to assist the review process!
-4. Push to your fork and submit a pull request
+4. Push to your fork and submit a pull request.
 5. Repeat the age-old adage: "Patience is a virtue". Just kidding. I'll take a look at your pull request as soon as I can and proceed from there.
 
 ## Possible Improvements
