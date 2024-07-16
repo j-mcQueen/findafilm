@@ -26,7 +26,7 @@ export default function Header({ ...props }) {
         <Reel className="w-7 h-7" />
       </div>
 
-      <p className="text-gray pt-5 xl:pt-0">
+      <p className="text-gray pt-5 xl:pt-0 leading-snug">
         Showing 10 films similar to:&nbsp;
         <span className="text-bgXL">{input.toUpperCase()}</span>
       </p>

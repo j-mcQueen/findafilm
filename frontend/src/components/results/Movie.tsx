@@ -6,11 +6,9 @@ export default function Movie({ ...props }) {
 
   return (
     <article className="font-inter py-10 xl:py-0">
-      <div></div>
-
       <div>
         <hgroup className="flex items-center justify-between">
-          <h2 className="xl:max-w-80 font-interB text-lg">
+          <h2 className="max-w-[250px] xl:max-w-80 font-interB text-lg">
             {movie.title.toUpperCase()}
           </h2>
 

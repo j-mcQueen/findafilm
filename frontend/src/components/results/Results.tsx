@@ -16,7 +16,7 @@ export default function Results({ ...props }) {
     <main>
       <Header input={results.input} />
 
-      <section className="xl:grid xl:grid-cols-3 xl:gap-10 p-5">
+      <section className="xl:grid xl:grid-cols-[repeat(1,minmax(0,500px))] items-center justify-center xl:gap-10 p-5">
         {results.chosen.map((movie: IMovie, index: number) => {
           return (
             <Movie

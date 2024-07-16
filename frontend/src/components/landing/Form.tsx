@@ -41,7 +41,7 @@ export default function Form({ ...props }) {
       onSubmit={(e) => handleSubmit(e)}
     >
       <label className="flex flex-col xl:w-2/5 w-full px-5 xl:px-0 font-interB">
-        ENTER A MOVIE
+        TYPE A MOVIE TITLE
         <input
           className="font-inter py-3 pl-3 mt-1 appearance-none bg-bg border border-solid border-bgL focus:outline-none focus:border-bgXL hover:border-bgXL transition-colors"
           type="text"
