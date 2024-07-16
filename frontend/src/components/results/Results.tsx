@@ -1,9 +1,13 @@
+import Header from "./Header";
+
 export default function Results({ ...props }) {
   const { results } = props;
 
   return (
     <main>
-      <section></section>
+      <section>
+        <Header input={results.input} />
+      </section>
     </main>
   );
 }
