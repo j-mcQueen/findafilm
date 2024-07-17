@@ -8,6 +8,8 @@ The basic idea is this: in the prompt, enter a film you've seen before that you 
 
 ### Requirements
 
+Before continuing, please ensure that `node` and `npm` are installed on your computer, and that your version of Python is >= 3.
+
 Usage of this application requires API keys from:
 
 - Tavily ([Register](https://app.tavily.com/sign-in)), a search engine optimized for LLMs and RAG that assists with providing movie options to the Open AI's LLM
@@ -40,7 +42,7 @@ OPENAI_API_KEY="your openai api key"
 ```bash
 python3 -m venv venv
 source venv/bin/activate
-pip install -r requirements.txt
+pip install -r requirements.txt # install backend dependencies
 python3 server.py
 ```
 
@@ -48,10 +50,11 @@ python3 server.py
 
 ```bash
 cd frontend/
+npm install # install frontend dependencies
 npm run dev
 ```
 
-5. Open the client in your browser:
+5. Open the client shown on your terminal in your browser, typically:
 
 ```bash
 http://localhost:5173/
@@ -61,7 +64,6 @@ http://localhost:5173/
 
 Setup notes:
 
-- These instructions assume the version of Python installed on your computer is >= 3
 - After you have set up your virtual environment, ensure your text editor's Python interpreter is pointing to the correct environment. Here are some helpful links if you have issues: [VSCode docs](https://code.visualstudio.com/docs/python/environments), [Visual Studio Code does not detect Virtual Environments](https://stackoverflow.com/questions/66869413/visual-studio-code-does-not-detect-virtual-environments)
 
 ## Contribution
