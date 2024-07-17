@@ -12,18 +12,24 @@ class Controller:
     pass
 
   def run(self, input: str):
+    # initialize the graph
     workflow = Graph()
 
-    for agent, action in nodes.items():
+    # add graph nodes
+    for agent, action in nodes.items(): # loop chosen to improve DRYness
       workflow.add_node(agent, action)
     
+    # connect graph nodes
     workflow.add_edge("search", "filter")
     workflow.add_edge("filter", "write")
 
+    # define start and end points
     workflow.set_entry_point("search")
     workflow.set_finish_point("write")
 
+    # assemble the graph + run workflow
     chain = workflow.compile()
     result = chain.invoke(input)
 
+    # return outcome of workflow (dictionary of all relevant generated movie data)
     return result

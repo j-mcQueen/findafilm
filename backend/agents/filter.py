@@ -1,5 +1,6 @@
 from utils import process
 
+# ideal generated outcome from filter agent
 example_output = """[
   {"title": movie title 1, "url": url to movie 1 IMDb page, "rating": IMDb rating, "genre": ["genre 1", "genre 2"] },
 ]"""

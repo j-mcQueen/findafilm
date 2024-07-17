@@ -1,5 +1,6 @@
 from utils import process
 
+# ideal generated outcome from filter agent
 example_output = """ {
   "title": movie title 1,
   "premise": 2 sentence premise of the film
